@@ -1,0 +1,15 @@
+# Taste
+- Keeps API credentials and secrets strictly server-side; requires a serverless proxy layer (e.g., an `/api` directory) so keys/tokens never reach the client browser. Confidence: 0.9
+- Prefers deterministic, explainable statistical methods (e.g., Bayesian averaging) over predictive machine learning models for rating/ranking/correction logic. Confidence: 0.8
+- Prefers lightweight vanilla JavaScript + Node.js serverless functions, deployed on Vercel, for simple web apps. Confidence: 0.8
+- Preserves existing project files and configuration (e.g., `.env`, tooling directories) — never overwrite or delete them. Confidence: 0.9
+- Prefers sequential, phase-gated execution: fully complete and validate one phase before moving to the next. Confidence: 0.9
+- Expects graceful error handling on both server (proper HTTP status codes, e.g., 400/500) and client (visible error message in the UI on fetch failure). Confidence: 0.9
+- Prefers Tailwind CSS (CDN) with a strict dark-mode theme for web interfaces. Confidence: 0.9
+- Expects web apps to work when run locally on their own machine (e.g., opening the HTML directly from disk), so a local dev server that serves static files and executes the API routes is needed for development — deploy-only setups surface as confusing failures (e.g., 404 on `/api`). Confidence: 0.6
+- Expects production accessibility/interaction quality: ≥44px touch targets, ≥16px input font (prevents iOS zoom), explicit labels (incl. visually-hidden ones), full keyboard operation, focus management (trap + return) for modals/drawers, visible focus-visible rings, and hover-independent affordances for touch/keyboard users. Confidence: 0.8
+- Expects polished motion design: custom design tokens, entrance/stagger animations, skeleton shimmer loading, hover/press/focus feedback, and a full `prefers-reduced-motion` fallback. Confidence: 0.75
+- Expects complete UI state coverage: loading skeletons, success confirmation, errors with an inline Retry recovery path, and instructive empty states rather than bare "no results" text. Confidence: 0.75
+- When offered a prioritized feature shortlist, prefers to have all of it built ("add all") rather than a subset. Confidence: 0.6
+- Prefers shareable, deep-linkable app state via URL hash sync, restored on load and on back/forward navigation. Confidence: 0.5
+- Expects verification before sign-off: syntax checks, serve checks, API endpoint checks, cross-checking referenced IDs, and cleaning up dev servers/processes and freeing ports afterward. Confidence: 0.7
